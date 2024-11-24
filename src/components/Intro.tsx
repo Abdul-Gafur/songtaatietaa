@@ -18,8 +18,22 @@ const IntroText = () => {
           Butter{' '}
         </ListItem>
         <ListItem>
-          <strong>Customers</strong>:  Health-conscious consumers, nursing
+          <strong>Customers</strong>: Health-conscious consumers, nursing
           mothers, hotels, households, schools.
+        </ListItem>
+
+        <ListItem>
+          <p>
+            We produce high-quality breakfast cereals, including{' '}
+            <span className="font-semibold text-secondary">Tombrown</span>,{' '}
+            <span className="font-semibold text-secondary">
+              Groundnut Paste
+            </span>
+            , <span className="font-semibold text-secondary">Dawada</span>, and{' '}
+            <span className="font-semibold text-secondary">Shea Butter</span>,
+            using locally sourced ingredients from smallholder farmers and
+            women&apos;s groups in the Upper West Region of Ghana.
+          </p>
         </ListItem>
       </ul>
     </div>

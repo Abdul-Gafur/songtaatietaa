@@ -5,7 +5,7 @@ const AboutUs: FC = () => {
   return (
     <div className="container m-auto py-6 px-4">
       <h1 className="text-3xl text-primary font-semibold border-b-4 border-secondary pb-1">
-        Company Overview
+        Overview
       </h1>
 
       <section className="space-y-8 my-5">
@@ -58,7 +58,7 @@ const AboutUs: FC = () => {
                 <strong>Mission: </strong>Our mission is to eradicate poverty,
                 malnutrition, hunger, and inequality in communities, locally and
                 internationally, by introducing improved standards, tools,
-                technologies, and ways of living.
+                technologies,modern farming practices, and ways of living.
               </p>
             </ListItem>
 
@@ -79,7 +79,7 @@ const AboutUs: FC = () => {
             Core Values:
           </h2>
 
-          <ul className='space-y-4 mt-5'>
+          <ul className="space-y-4 mt-5">
             <ListItem text="Commitment to environmentally friendly practices."></ListItem>
             <ListItem text="Supporting smallholder farmers and creating job opportunities."></ListItem>
             <ListItem text=" Embracing new technologies and modern agricultural techniques."></ListItem>

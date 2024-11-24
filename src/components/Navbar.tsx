@@ -15,7 +15,7 @@ const Navbar = () => {
     { elementId: 'products', text: 'Products' },
     { elementId: 'validation', text: 'Validation' },
     { elementId: 'audience', text: 'Audience' },
-    { elementId: 'investment', text: 'Investment' },
+    { elementId: 'partners', text: 'Partners' },
     { elementId: 'competitive-adv', text: 'Advantage' },
     { elementId: 'team', text: 'Team' },
     { elementId: 'directors', text: 'Directors' },

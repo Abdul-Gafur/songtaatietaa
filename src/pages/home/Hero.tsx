@@ -29,6 +29,7 @@ const Hero = ({}: { className?: string }) => {
         <p className="max-sm:text-xl text-2xl mt-6">
           NOURISHING GHANA, EMPOWERING FUTURES.
         </p>
+        
       </div>
     </main>
   )

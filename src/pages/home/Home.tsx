@@ -1,7 +1,7 @@
 import CompetitiveAdvantage from '../../components/CompetitiveAdv'
 import IntroText from '../../components/Intro'
-import InvestmentAsk from '../../components/InvestmentAsk'
 import MarketValidation from '../../components/MarketValidation'
+import PartnersAndClientsSection from '../../components/PartnersAndClientsSection '
 import ProductsPortfolio from '../../components/Products'
 import TargetAudience from '../../components/TargetAudience'
 import TheProblem from '../../components/TheProblem'
@@ -11,34 +11,35 @@ import Hero from './Hero'
 
 const HomePage = () => {
   return (
-    <div className=" " id='top'>
+    <div className=" " id="top">
       <Hero />
       <ul className="container mx-auto my-6 space-y-20 px-4">
         <li>
-          <IntroText  />
+          <IntroText />
         </li>
-        <li id='problem'>
+        <li id="problem">
           <TheProblem />
         </li>
-        <li id='products'>
+        <li id="products">
           <ProductsPortfolio />
         </li>
-        <li id='validation'>
+        <li id="validation">
           <MarketValidation />
         </li>
-        <li id='audience'>
+        <li id="audience">
           <TargetAudience />
         </li>
-        <li id='investment'>
-          <InvestmentAsk />
-        </li>
-        <li id='competitive-adv'>
+
+        <li id="competitive-adv">
           <CompetitiveAdvantage />
         </li>
-        <li id='team'>
+        <li id="partners">
+          <PartnersAndClientsSection />
+        </li>
+        <li id="team">
           <OurTeamMembers />
         </li>
-        <li id='directors'>
+        <li id="directors">
           <BoardOfDirectors />
         </li>
       </ul>
