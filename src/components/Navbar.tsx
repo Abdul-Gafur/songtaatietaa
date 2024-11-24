@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <div className="m-auto relative">
       <nav
-        className={` min-h-[16vh] flex flex-col justify-between ${isTopMost ? 'bg-gradient-to-b from-green-50 to-secondary/50' : ''}`}
+        className={` min-h-[10vh] flex flex-col justify-between ${isTopMost ? 'bg-gradient-to-b from-green-50 to-secondary/50' : ''}`}
       >
         <section className="flex items-center gap-3 justify-center bg-white text-primary w-fit rounded-full px-5 mx-auto">
           {links.map((linkObj, index) => (
@@ -50,7 +50,7 @@ const Navbar = () => {
         {/* Quick links */}
         <section
           hidden={window.location.pathname !== '/'}
-          className={` justify-end group fixed  right-2 p-1 z-20 pt-6 ${isTopMost ? 'top-[8vh]' : 'top-1'}`}
+          className={` justify-end group fixed  right-2 p-1 z-20 pt-6 ${isTopMost ? 'top-[6vh]' : 'top-1'}`}
         >
           <button className="absolute right-2 bg-primary px-2 rounded whitespace-nowrap">
             Go to
