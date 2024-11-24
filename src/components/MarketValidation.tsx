@@ -25,10 +25,10 @@ const MarketValidation = () => {
           {statistics.map((stat, index) => (
             <li
               key={index}
-              className="flex flex-col justify-center items-center"
+              className="flex flex-col justify-center items-center text-sm sm:text-lg"
             >
               <div className="h-1 bg-white w-20 my-12"></div>
-              <p>{stat.title}</p>
+              <p className='line-clamp-3 h-20 '>{stat.title}</p>
               <ScrollRevealCounter
                 className="text-3xl font-semibold"
                 endValue={stat.value}
