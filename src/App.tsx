@@ -1,4 +1,7 @@
 import './index.css'
+import { RouterProvider } from 'react-router-dom'
+import routes from './routes/routes'
+ 
 export default function App() {
-  return <div className="text-center lowercase">App</div>
+  return <RouterProvider router={routes} />
 }
