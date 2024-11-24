@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import MisAndVis from '../../assets/about/mission-and-vision.png'
-import ListItem from '../../components/Li'
+import ListItem from '../../components/ListItem'
 const AboutUs: FC = () => {
   return (
     <div className="container m-auto py-6 px-4">

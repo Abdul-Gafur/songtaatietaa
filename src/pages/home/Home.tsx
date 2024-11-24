@@ -11,7 +11,7 @@ import Hero from './Hero'
 
 const HomePage = () => {
   return (
-    <div className=" " id="top">
+    <div className=" ">
       <Hero />
       <ul className="container mx-auto my-6 space-y-20 px-4">
         <li>

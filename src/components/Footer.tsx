@@ -41,31 +41,38 @@ const MainFooter = () => {
     },
   ]
   return (
-    <footer className="bg-secondary min-h-80 flex flex-wrap items-start gap-8">
-      <ul className="flex flex-wrap items-start gap-10 p-6 text-white">
-        {contacts.map((contact, index) => (
-          <li key={index} className="flex items-start">
-            <span className="mt-1 mr-2 text-3xl">{contact.icon}</span>
-            <div>
-              <h2 className="font-bold text-lg">{contact.title}</h2>
-              <p>{contact.description}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-
-      <div className=' text-white p-6'>
-        <h2>Follow us on: </h2>
+    <footer className="bg-secondary">
+      <div className="flex flex-wrap items-start gap-8">
         <ul className="flex flex-wrap items-start gap-10 p-6 text-white">
-          {socialMedia.map((media, index) => (
+          {contacts.map((contact, index) => (
             <li key={index} className="flex items-start">
-              <a href={media.link} className="border rounded-xl p-2 w-28">
-                <span className="mt-1 mr-2 text-3xl">{media.icon}</span>
-                <h2 className="font-bold text-lg">{media.name}</h2>
-              </a>
+              <span className="mt-1 mr-2 text-3xl">{contact.icon}</span>
+              <div>
+                <h2 className="font-bold text-lg">{contact.title}</h2>
+                <p>{contact.description}</p>
+              </div>
             </li>
           ))}
         </ul>
+        <div className=" text-white p-6">
+          <h2>Follow us on: </h2>
+          <ul className="flex flex-wrap items-start gap-10 p-6 text-white">
+            {socialMedia.map((media, index) => (
+              <li key={index} className="flex items-start">
+                <a href={media.link} className="border rounded-xl p-2 w-28">
+                  <span className="mt-1 mr-2 text-3xl">{media.icon}</span>
+                  <h2 className="font-bold text-lg">{media.name}</h2>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>{' '}
+      <div className="relative z-10 mt-10 border-t border-gray-700 pt-4 text-center text-sm">
+        <p className="text-gray-400 bg-white rounded-full px-2 w-fit mx-auto">
+          &copy; {new Date().getFullYear()} Song-Taa Tie-Taa Company. All rights
+          reserved.
+        </p>
       </div>
     </footer>
   )

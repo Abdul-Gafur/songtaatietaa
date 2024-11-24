@@ -29,11 +29,11 @@ const Navbar = () => {
   }
   const isTopMost = useIsScrollToDocTop()
   return (
-    <div className="m-auto relative">
+    <div className="m-auto " id='top'>
       <nav
         className={` min-h-[10vh] flex flex-col justify-between ${isTopMost ? 'bg-gradient-to-b from-green-50 to-secondary/50' : ''}`}
       >
-        <section className="flex items-center gap-3 justify-center bg-white text-primary w-fit rounded-full px-5 mx-auto">
+        <section className="flex items-center gap-3 justify-center bg-white text-primary w-fit rounded-full px-5 mx-auto sticky top-0">
           {links.map((linkObj, index) => (
             <NavLink
               key={index}
