@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
 import { FaUsers, FaHome, FaSchool, FaBox, FaHeartbeat } from 'react-icons/fa'
+import { useEffect, useState } from 'react'
 
-// Import images for partners from assets folder
+// Import images for partners
 import mofaLogo from '../assets/partners/p1.png'
 import wfpLogo from '../assets/partners/p2.png'
 import fdaLogo from '../assets/partners/tradeline.svg'
@@ -25,123 +26,118 @@ const PartnersAndClientsSection = () => {
       name: 'Nursing Mothers',
       description:
         'We provide solutions to support the nutritional needs of nursing mothers.',
+      color: 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500',
     },
     {
       icon: <FaHome />,
       name: 'Households',
       description:
         'Our products cater to everyday households seeking healthy, sustainable options.',
+      color: 'bg-gradient-to-r from-green-400 to-blue-500',
     },
     {
       icon: <FaSchool />,
       name: 'Schools & Hotels',
       description:
         'We provide nutritious options for schools and hospitality businesses.',
+      color: 'bg-gradient-to-r from-yellow-400 to-orange-500',
     },
     {
       icon: <FaBox />,
       name: 'Local Exporters',
       description:
         'We support local exporters with products that meet international standards.',
+      color: 'bg-gradient-to-r from-blue-500 to-purple-600',
     },
     {
       icon: <FaHeartbeat />,
       name: 'Health-conscious Consumers',
       description:
         'We cater to health-conscious consumers seeking organic and wholesome products.',
+      color: 'bg-gradient-to-r from-pink-400 to-red-500',
     },
   ]
 
-  // Define animation variants for Framer Motion
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, ease: 'easeInOut' },
-    },
-  }
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-  const cardVariants = {
-    hover: {
-      scale: 1.05,
-      boxShadow: '0 15px 30px rgba(0, 0, 0, 0.1)',
-      transition: {
-        duration: 0.3,
-        type: 'spring',
-        stiffness: 400,
-        damping: 10,
-      },
-    },
-  }
+  // Automatically navigate through carousel items
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % partners.length)
+    }, 3000)
+
+    return () => clearInterval(interval) // Cleanup on component unmount
+  }, [partners.length])
+
+  const visiblePartners = 4 // Number of partners visible at once
 
   return (
-    <>
-      {/* Our Partners Section */}
-      <motion.div
-        className=" mt-12"
-        initial="hidden"
-        whileInView="visible"
-        variants={containerVariants}
-        viewport={{ once: true, amount: 0.5 }}
-      >
-        <h3 className="text-3xl font-extrabold text-gray-900">Our Partners</h3>
-        <p className="mt-4 text-lg text-gray-700">
-          We work with various stakeholders to achieve our mission of promoting
-          sustainable agriculture and food security:
+    <div className="py-16 px-6 sm:px-12 bg-gray-50">
+      {/* Partners Section */}
+      <section className="text-center">
+        <h2 className="text-4xl font-bold text-gray-800">Our Partners</h2>
+        <p className="mt-4 text-lg text-gray-600">
+          Collaborating with industry leaders to promote sustainable agriculture
+          and food security.
         </p>
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {partners.map((partner, index) => (
-            <div key={index} className="flex justify-start items-center">
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="h-16 object-contain mx-auto"
-              />
-            </div>
-          ))}
+        <div className="relative mt-10 overflow-hidden">
+          <div
+            className="flex transition-transform duration-700"
+            style={{
+              transform: `translateX(-${(currentIndex * 100) / visiblePartners}%)`,
+            }}
+          >
+            {partners
+              .concat(partners) // Duplicate items to create infinite loop effect
+              .map((partner, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-1/4 flex justify-center px-4"
+                  style={{ maxWidth: `${100 / visiblePartners}%` }}
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="h-24 object-contain mx-auto"
+                  />
+                </div>
+              ))}
+          </div>
         </div>
-      </motion.div>
+      </section>
 
-      <hr className="my-12 border-gray-300" />
+      <hr className="my-16 border-gray-300" />
 
-      {/* Our Clients Section */}
-      <motion.div
-        className=" mt-12"
-        initial="hidden"
-        whileInView="visible"
-        variants={containerVariants}
-        viewport={{ once: true, amount: 0.5 }}
-      >
-        <h3 className="text-3xl font-extrabold text-gray-900">Our Clients</h3>
-        <p className="mt-4 text-lg text-gray-700">
-          Marvmay products are trusted by a diverse group of customers,
-          including:
+      {/* Clients Section */}
+      <section className="text-center">
+        <h2 className="text-4xl font-bold text-gray-800">Our Clients</h2>
+        <p className="mt-4 text-lg text-gray-600">
+          Trusted by diverse customers for their healthy and sustainable needs.
         </p>
-
-        {/* Timeline Design for Clients */}
-        <div className="mt-8 grid md:grid-cols-3 gap-x-4 space-y-8">
+        <div className="mt-10 grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {clients.map((client, index) => (
             <motion.div
               key={index}
-              className="flex items-center space-x-4 bg-white bg-opacity-30 backdrop-blur-lg rounded-lg p-6 shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out"
-              variants={cardVariants}
-              whileHover="hover"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2)',
+              }}
+              className="bg-white rounded-lg shadow-lg p-6 text-left"
             >
-              <div className="text-primary text-4xl">{client.icon}</div>
-              <div>
-                <h4 className="text-xl font-semibold text-gray-900">
-                  {client.name}
-                </h4>
-                <p className="mt-2 text-gray-600 text-sm">
-                  {client.description}
-                </p>
+              <div
+                className={`w-16 h-16 flex items-center justify-center rounded-full text-white text-3xl ${client.color}`}
+              >
+                {client.icon}
               </div>
+              <h4 className="text-xl font-semibold text-gray-800 mt-4">
+                {client.name}
+              </h4>
+              <p className="mt-2 text-gray-600">{client.description}</p>
             </motion.div>
           ))}
         </div>
-      </motion.div>
-    </>
+      </section>
+    </div>
   )
 }
 
