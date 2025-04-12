@@ -1,36 +1,87 @@
-
+import { motion } from 'framer-motion'
 import { staff } from '../../data/staff'
+
+const staggerContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+}
 
 const OurTeamMembers = () => {
   return (
-    <div>
-      <h1 className="text-4xl md:text-6xl font-bold">Our Team</h1>
+    <section className="relative bg-[#fdfdfd] py-20 px-6 md:px-[8%] overflow-hidden">
+      <motion.div
+        className="text-center mb-20"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h1 className="text-5xl md:text-6xl font-bold text-gray-900">
+          Meet Our Team
+        </h1>
+        <p className="text-gray-500 text-lg mt-4">
+          A blend of brilliance, dedication, and heart.
+        </p>
+      </motion.div>
 
-      <ul className='flex flex-wrap gap-10 my-6'>
+      <motion.div
+        className="flex flex-wrap justify-center gap-14 relative"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         {staff.team.map((member, index) => {
+          // Randomize sizes/position for organic layout
+          const sizeVariants = [
+            'h-64 w-64', // small
+            'h-72 w-72', // medium
+            'h-80 w-80', // large
+          ]
+          const randSize = sizeVariants[index % sizeVariants.length]
+
+          const isOffset = index % 3 === 0 || index % 5 === 0
+          const offsetClass = isOffset ? 'translate-y-6 md:translate-y-12' : ''
+
           return (
-            <li
+            <motion.div
               key={index}
-              className="flex flex-col justify-center items-center w-fit m-auto"
+              variants={fadeUp}
+              className={`relative flex flex-col items-center ${offsetClass}`}
             >
-              <img
-                src={member.image}
-                alt="staff"
-                className="h-44 w-44 md:h-72 md:w-72 rounded-full "
-              />
-              <div hidden={!member.role} className="bg-primary text-white -mt-6 z-10 py-2 px-3 rounded-md w-fit font-semibold">
-                {member.role}
+              <div
+                className={`rounded-full overflow-hidden border-[3px] border-primary shadow-xl ${randSize}`}
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="object-cover h-full w-full"
+                />
               </div>
 
-              <div className="font-semibold mt-3 text-center">
-                <p className="text-primary">{member.name}</p>
-                <p className="mt-2">{member.specialRole}</p>
+              {member.role && (
+                <span className="mt-4 bg-secondary text-white px-4 py-2.5 rounded-md text-sm  font-semibold shadow-sm">
+                  {member.role}
+                </span>
+              )}
+
+              <div className="text-center mt-3">
+                <p className="text-xl font-bold text-primary">{member.name}</p>
               </div>
-            </li>
+            </motion.div>
           )
         })}
-      </ul>
-    </div>
+      </motion.div>
+    </section>
   )
 }
 

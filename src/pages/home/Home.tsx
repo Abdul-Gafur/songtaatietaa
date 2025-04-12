@@ -26,13 +26,13 @@ const HomePage = () => {
         <li id="validation">
           <MarketValidation />
         </li>
-        <li id="audience">
+        {/* <li id="audience">
           <TargetAudience />
         </li>
 
         <li id="competitive-adv">
           <CompetitiveAdvantage />
-        </li>
+        </li> */}
         <li id="partners">
           <PartnersAndClientsSection />
         </li>
