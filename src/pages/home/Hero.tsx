@@ -41,7 +41,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
         >
-          Song-Taa Tie-Taa Company Ltd
+          Songtaa Tietaa Company Ltd
         </motion.h2>
 
         <motion.p

@@ -70,7 +70,7 @@ const MainFooter = () => {
       </div>{' '}
       <div className="relative z-10 mt-10 border-t border-gray-700 pt-4 text-center text-sm">
         <p className="text-gray-400 bg-white rounded-full px-2 w-fit mx-auto">
-          &copy; {new Date().getFullYear()} Song-Taa Tie-Taa Company. All rights
+          &copy; {new Date().getFullYear()} Songtaa Tietaa Company. All rights
           reserved.
         </p>
       </div>

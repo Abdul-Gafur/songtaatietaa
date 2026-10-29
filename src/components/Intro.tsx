@@ -5,7 +5,7 @@ const IntroText = () => {
     <section className="max-w-6xl  mx-auto px-4 md:px-0">
       {/* Company Name */}
       <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-primary border-b border-primary/30 pb-2 mb-6">
-        Song-Taa Tie-Taa Company Ltd
+        Songtaa Tietaa Company Ltd
       </h2>
 
       {/* Introduction */}

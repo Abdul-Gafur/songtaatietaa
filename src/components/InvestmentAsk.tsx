@@ -11,7 +11,7 @@ const InvestmentAsk = () => {
             Investment Ask
           </h1>
           <p>
-            Song-Taa Tie-Taa Company Ltd is seeking an investment of
+            Songtaa Tietaa Company Ltd is seeking an investment of
             <strong>$499,898</strong> to accelerate our mission of delivering
             nutritious, locally sourced breakfast cereals to communities across
             Ghana.
