@@ -3,7 +3,7 @@ import ScrollRevealCounter from './countup'
 
 const MarketValidation = () => {
   const statistics = [
-    { title: 'Smallholder Farmers', subtitle: 'Total Users', value: 1500 },
+    { title: 'Smallholder Farmers', subtitle: 'Total Users', value: 2280 },
     { title: 'Bulk Purchase Customers', subtitle: 'Total Users', value: 152 },
     { title: 'VSLA Groups', subtitle: 'Total Users', value: 48 },
   ]

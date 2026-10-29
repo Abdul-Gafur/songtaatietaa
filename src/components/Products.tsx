@@ -1,15 +1,21 @@
 import { motion } from 'framer-motion'
 import { HiInformationCircle } from 'react-icons/hi'
-import prod1 from '../assets/products/product1.png'
-import prod2 from '../assets/products/product2.png'
-import prod3 from '../assets/products/product3.png'
-import prod4 from '../assets/products/product4.png'
+import dawadawaSachet from '../assets/products/dawadawa-sachet.jpg'
+import dawadawaJar from '../assets/products/dawadawa-jar.jpg'
+import honey from '../assets/products/honey.jpg'
+import rawSheaButter from '../assets/products/raw-shea-butter.jpg'
+import sheaCrown from '../assets/products/shea-crown.jpg'
+import sheaCrownOpen from '../assets/products/shea-crown-open.jpg'
+import sheaGlow from '../assets/products/shea-glow.jpg'
 
 const products = [
-  { image: prod1, name: 'Raw Shea Butter' },
-  { image: prod2, name: 'Groundnut Paste' },
-  { image: prod3, name: 'Tombrown' },
-  { image: prod4, name: 'Banku Mix Flour' },
+  { image: dawadawaSachet, name: 'Dawadawa sachet' },
+  { image: dawadawaJar, name: 'Tietaa Powdered Dawadawa' },
+  { image: honey, name: 'Tietaa Honey' },
+  { image: rawSheaButter, name: 'Tietaa Raw Butter' },
+  { image: sheaCrown, name: 'Tietaa Shea Crown - Hair Pomade' },
+  { image: sheaCrownOpen, name: 'Tietaa Shea Crown - Hair Pomade' },
+  { image: sheaGlow, name: 'Tietaa Shea Glow' },
 ]
 
 const container = {
@@ -53,7 +59,7 @@ const ProductsPortfolio = () => {
       </motion.div>
 
       <motion.ul
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10"
+        className="flex flex-wrap justify-center gap-10"
         variants={container}
         initial="hidden"
         whileInView="show"
@@ -63,15 +69,15 @@ const ProductsPortfolio = () => {
           <motion.li
             key={index}
             variants={item}
-            className="group relative overflow-hidden rounded-3xl shadow-xl bg-white border border-gray-100 hover:scale-[1.03] transition-transform duration-300 ease-out"
+            className="group relative overflow-hidden rounded-3xl shadow-xl bg-white border border-gray-100 hover:scale-[1.03] transition-transform duration-300 ease-out w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(25%-1.875rem)]"
           >
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-64 object-cover"
+              className="w-full aspect-[3/4] object-contain bg-white"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out"></div>
-            <div className="absolute bottom-4 left-4 text-white text-lg font-medium drop-shadow-lg">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-70 group-hover:opacity-100 transition duration-300 ease-in-out"></div>
+            <div className="absolute bottom-4 left-4 right-4 text-white text-lg font-medium drop-shadow-lg">
               {product.name}
             </div>
           </motion.li>

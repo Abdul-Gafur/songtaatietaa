@@ -23,7 +23,7 @@ const AboutUs: FC = () => {
           delicious breakfast cereals that cater to the diverse needs of its
           target customers, including nursing mothers, hotels, individual
           households, exporters, and schools. The enterprise&apos;s product line
-          includes Tombrown, groundnut paste, Dawada, and shea butter, all
+          includes Tombrown, groundnut paste, Dawadawa, and shea butter, all
           crafted from the finest raw materials sourced directly from local
           farmers and women&apos;s groups in Lawra and Zambo.
         </p>
@@ -34,9 +34,9 @@ const AboutUs: FC = () => {
           individuals, with 90% of the workforce being women. The majority of
           the team members are youth under the age of 35, reflecting the
           enterprise&apos;s commitment to empowering the next generation. The
-          business model supports local farmers and women&apos;s groups,
-          ensuring a steady supply of raw materials while fostering economic
-          growth in the community.
+          business model supports over 2,280 local farmers, 65% of whom are
+          youth, and women&apos;s groups, ensuring a steady supply of raw
+          materials while fostering economic growth in the community.
         </p>
 
         <p>

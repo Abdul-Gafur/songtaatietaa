@@ -1,6 +1,12 @@
 import React from 'react'
-import CountUp from 'react-countup'
+import ReactCountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
+
+// react-countup is CommonJS-only; Vite 8 hands back the whole module object
+// as the default import, so unwrap `.default` when it is there.
+const CountUp =
+  (ReactCountUp as unknown as { default?: typeof ReactCountUp }).default ??
+  ReactCountUp
 
 const ScrollRevealCounter: React.FC<{
   endValue: number

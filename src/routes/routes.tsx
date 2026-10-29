@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 import ContactUs from '../pages/contact/Contact'
 import TeamPage from '../pages/team/Page'
 
-export default createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: '',
     element: <Navbar />,
@@ -20,3 +20,5 @@ export default createBrowserRouter([
     ],
   },
 ])
+
+export default router
